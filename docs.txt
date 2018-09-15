@@ -1,0 +1,10 @@
+In case of var, variable gets declared at the top of the function i.e. hoisting is happening,
+In this case declared globally 
+that is why the result will be "undefined"
+
+In case of let, hoisting is not happening, 
+that is why error will come , it is not defined
+
+It is good practice to use let instead of var
+
+we have block scoping with let keyword but with var keyword we do not have block scoping
