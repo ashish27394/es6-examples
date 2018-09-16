@@ -48,6 +48,11 @@ for(var i = 0 ; i< 2 ;i++)
 console.log(updateFunctions[0]); //0
 console.log(updateFunctions[1]); //1
 
+//--------------------
+var a = 20;
+var a = 10;
+
+console.log(a);  //10
 /* ************* */
 
 //let demo
@@ -119,3 +124,17 @@ console.log(updateFunctions[1]()); //1
 /* No closure in this case.
 Everytime a *new i* will be created
 */
+
+//------------------
+let a = 20;
+let a = 10;
+
+console.log(a);  //'a' has already been declared
+
+//------------------
+var a = 20;
+{
+let a = 10;
+}
+
+console.log(a);  //20
