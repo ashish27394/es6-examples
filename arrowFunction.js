@@ -125,3 +125,61 @@ console.log(typeof getPrice);
 var getPrice = () => 5.99;
 console.log(getPrice.hasOwnProperty('prototype')); //false
 
+//----------------------------------------------------------------------
+
+//In es5, if we do not set the parameter, it's value will be
+//undefined. In es6 we have ability to set it default.
+
+var getProduct = function(productId = 1000){
+        console.log(productId);
+}
+getProduct(); //1000
+
+//-------------------
+var getProduct = function(productId = 1000, type = 'software'){
+    console.log(productId + ', ' + type);
+}
+getProduct(undefined, 'hardware'); //1000, hardware
+
+//-------------------
+var geTotal = function(price , tax = price*0.07){
+        console.log(price + tax);
+}
+geTotal(5.00);//5.35
+
+//--------------------
+var baseTax = 0.07;
+var geTotal = function(price , tax = price * baseTax){
+    console.log(price + tax);
+}
+geTotal(5.00);//5.35
+
+//---------------------
+
+var generateBaseTax = () => 0.07;
+var geTotal = function(price , tax = price * generateBaseTax() ){
+    console.log(price + tax);
+}
+geTotal(5.00);//5.35
+
+//--------------------
+//arguments will refere to the number of arguments passed
+//to the function
+var geTotal = function(price, tax = 0.07){
+    console.log(arguments.length);
+}
+geTotal(5); //1
+
+//----------------------
+var geTotal = function(price = adjustment , adjustment = 1)
+{
+    console.log(price + adjustment);
+}
+geTotal(); //errro - adjustment is not defined
+//In parameters, declaration should happen before
+//the usage
+
+geTotal(5);//6
+//This will work b/c here it will use the value
+//passed as argument.
+
