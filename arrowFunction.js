@@ -183,3 +183,6 @@ geTotal(5);//6
 //This will work b/c here it will use the value
 //passed as argument.
 
+/* Dynamic Functions with default */
+var geTotal = new Function("price = 20.00", "return price;");
+console.log(geTotal()); //20
